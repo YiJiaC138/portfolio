@@ -48,7 +48,7 @@
   top: 0;
   left: 0;
   width: 100vw;
-  background: #adcade;
+  background: #003559;
   box-shadow: 0 2px 8px rgba(0,0,0,0.06);
   z-index: 100;
   padding: 0.5rem 0;
@@ -79,13 +79,13 @@
 }
 
 body {
-  background: #6e8a9c;
+  background: #87bd99;
   font-family: 'Segoe UI', Arial, sans-serif;
   color: #334155;
 }
 
 .hero-section {
-  background: #ffffff;
+  background: #effddf;
   color: #334155;
   display: flex;
   flex-direction: column;
@@ -102,7 +102,7 @@ body {
 }
 
 .skills-section {
-  background: #ffffff;
+  background: #f1ffeb;
   color: #334155;
   padding: 2.5rem 1rem;
   border-radius: 1.5rem;

@@ -71,12 +71,12 @@ export default function App() {
       {/* Header Navigation */}
       <header className="app-header">
         <nav className="main-nav">
-          <a href="#profile">My Profile</a>
-          <a href="#projects">Personal Projects</a>
-          <a href="#skills">Technical Skills</a>
-          <a href="#education">Education</a>
-          <a href="#clubs">Clubs & Involvement</a>
-          <a href="#languages">Languages</a>
+          <a className="header-link" href="#profile">My Profile</a>
+          <a className="header-link" href="#projects">Personal Projects</a>
+          <a className="header-link" href="#skills">Technical Skills</a>
+          <a className="header-link" href="#education">Education</a>
+          <a className="header-link" href="#clubs">Clubs & Involvement</a>
+          <a className="header-link" href="#languages">Languages</a>
         </nav>
       </header>
       <main style={{ maxWidth: '900px', margin: '0 auto', padding: '5rem 0 2rem 0' }}>
@@ -93,19 +93,38 @@ export default function App() {
             </div>
           </Section>
         </div>
+        {/*Experience Section*/}
+        <div id="experience">
+          <Section>
+            <div className="skills-section">
+              <h2 className="section-title">Experience</h2>
+              <Expandable title="IT developer intern at SK Intellix">
+                <ul className="text-sm" style={{ paddingLeft: '1.5em', margin: 0, textAlign: 'left', listStylePosition: 'outside' }}>
+                  <li>Assisted in extending and maintaining frontend of the company's storefront website</li>
+                  <li>Debugged and resolved various frontend issues and bugs</li>
+                  <li>Documented the development process to improve code readability and maintainability</li>
+                  <li>Collaborated with the team and suggested improvements to the frontend codebase</li>
+                  <li>Exposed to tools that handles API integration and web application development</li>
+                  <li>Assisted with evaluation and testing of SK intellix's AI-powered product; NamuhX</li>
 
+                </ul>
+              </Expandable>
+            </div>
+          </Section>
+        </div>
         {/* Personal Projects Section */}
         <div id="projects">
           <Section>
             <div className="skills-section">
-              <h2 className="section-title">Personal Projects & Hackathons</h2>
-              <Expandable title="Smart Bulletin Board (React + Firebase + MediaPipe) — Final Year Project (In Progress)">
+              <h2 className="section-title">Projects</h2>
+              <Expandable title="Smart Bulletin Board (React + Firebase + MediaPipe) — Final Year Project">
                 <ul className="text-sm" style={{ paddingLeft: '1.5em', margin: 0, textAlign: 'left', listStylePosition: 'outside' }}>
                   <li>Final year capstone project to build a centralized, interactive digital noticeboard system for campus announcements</li>
                   <li>Integrated Google MediaPipe to enable custom hand gesture recognition, allowing touchless interaction with the bulletin board</li>
                   <li>Developed the frontend using React, focusing on a responsive and user-friendly interface for content creation and display</li>
                   <li>Utilized Firebase for real-time database synchronization, cloud storage, and user role management</li>
                   <li>Designed to enhance accessibility and streamline content dissemination in public spaces</li>
+                  <li>Achieved top 10 best project award in Monash University Malaysia</li>
                 </ul>
               </Expandable>
               <Expandable title="Chess Engines & Game Logic Projects (Python, TypeScript, Java)">
@@ -122,6 +141,15 @@ export default function App() {
                     <li>Focused on applying object-oriented design principles to model complex rule sets</li>
                     <li>Created to deepen understanding of backend game logic and traditional board games</li>
                 </ul>
+              </Expandable>
+              <Expandable title="Smart Trip Planner">
+                <ul className="text-sm" style={{ paddingLeft: '1.5em', margin: 0, textAlign: 'left', listStylePosition: 'outside' }}>
+                  <li>Participated in Kaggle x Google Capstone Project</li>
+                  <li>Developed a smart trip planner using React and Node.js to help users plan their trips</li>
+                  <li>Implemented specialized AI agents using Google's SDK for tasks like visa rule checks, packing lists, and real-time travel info, improving trip planning accuracy and efficiency.</li>
+                  <li><a className="github-link" target="_blank" href="https://github.com/yijiachiew/smart-trip-planner">Github Repository here</a></li>
+                </ul>
+
               </Expandable>
               
             </div>
@@ -155,11 +183,19 @@ export default function App() {
                   <div>HTML/CSS</div>
                 </div>
                 <div>
-                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/haskell/haskell-original.svg" alt="Haskell" style={{ width: 40, height: 40 }} />
-                  <div>Haskell</div>
+                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" alt="TypeScript" style={{ width: 40, height: 40 }} />
+                  <div>TypeScript</div>
                 </div>
                 <div>
-                  <img src={reactLogo} alt="React" />
+                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vuejs/vuejs-original.svg" alt="Vue" style={{ width: 40, height: 40 }} />
+                  <div>Vue.js</div>
+                </div>
+                <div>
+                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg" alt="PHP" style={{ width: 40, height: 40 }} />
+                  <div>PHP</div>
+                </div>
+                <div>
+                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React" style={{ width: 40, height: 40 }} />
                   <div>React</div>
                 </div>
                 <div>
@@ -187,7 +223,7 @@ export default function App() {
                   <div>Figma</div>
                 </div>
                 <div>
-                  <img src="https://upload.wikimedia.org/wikipedia/commons/0/08/Canva_icon_2021.svg" alt="Canva" style={{ width: 40, height: 40 }} />
+                  <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/canva/canva-original.svg" alt="Canva" style={{ width: 40, height: 40 }} />
                   <div>Canva</div>
                 </div>
               </div>
@@ -202,8 +238,8 @@ export default function App() {
               <h2 className="section-title">Education</h2>
               <h3 className="font-bold">Monash University Malaysia, Subang Jaya, Kuala Lumpur</h3>
               <p className="text-sm">Bachelor of Computer Science | March 2023 - Now</p>
-              <p className="text-sm">Overall GPA: 3.789 | CGPA:3.931 </p>
-              <p className="text-sm">WAM: 84.233</p>
+              {/* <p className="text-sm">Overall GPA: 3.789 | CGPA:3.931 </p> */}
+              {/* <p className="text-sm">WAM: 84.233</p> */}
               <p className="text-sm">Relevant Coursework: Data Structures & Algorithms, App Development, Object Oriented Design</p>
               <br />
               <h3 className="font-bold">Inti International College Penang, Pulau Pinang</h3>
@@ -224,7 +260,7 @@ export default function App() {
               <div className="skills-grid">
                 <div>
                   <h3 className="font-semibold">Monash Speakers Society - Secretary</h3>
-                  <div className="text-sm">June 2023 - Now</div>
+                  <div className="text-sm">January 2025 - December 2025</div>
                   <div className="text-sm">Coordinated society operations, including meeting agendas, membership records, and official documentation.</div>
                 </div>
                 <div>
