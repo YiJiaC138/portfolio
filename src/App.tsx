@@ -140,6 +140,7 @@ export default function App() {
                     <li>Developed a complete game engine in Java, supporting all piece movements, game-over rules, and board representation</li>
                     <li>Focused on applying object-oriented design principles to model complex rule sets</li>
                     <li>Created to deepen understanding of backend game logic and traditional board games</li>
+                    <li><a className="github-link" target="_blank" href="https://github.com/YiJiaC138/xiangqi">Github Repository here</a></li>
                 </ul>
               </Expandable>
               <Expandable title="Smart Trip Planner">
@@ -147,7 +148,7 @@ export default function App() {
                   <li>Participated in Kaggle x Google Capstone Project</li>
                   <li>Developed a smart trip planner using React and Node.js to help users plan their trips</li>
                   <li>Implemented specialized AI agents using Google's SDK for tasks like visa rule checks, packing lists, and real-time travel info, improving trip planning accuracy and efficiency.</li>
-                  <li><a className="github-link" target="_blank" href="https://github.com/yijiachiew/smart-trip-planner">Github Repository here</a></li>
+                  <li><a className="github-link" target="_blank" href="https://github.com/YiJiaC138/smart-trip-planner">Github Repository here</a></li>
                 </ul>
 
               </Expandable>
