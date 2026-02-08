@@ -127,21 +127,32 @@ export default function App() {
                   <li>Achieved top 10 best project award in Monash University Malaysia</li>
                 </ul>
               </Expandable>
-              <Expandable title="Chess Engines & Game Logic Projects (Python, TypeScript, Java)">
-                <ul className="text-sm" style={{ paddingLeft: '1.5em', margin: 0, textAlign: 'left', listStylePosition: 'outside' }}>
-                  <li>Chess Web App: Built a full-stack chess application with real-time move validation, game-over detection, and Stockfish AI integration</li>
-                  <li>Used WebSocket to enable seamless communication between the python-chess backend and a TypeScript-based frontend</li>
-                  <li>Managed in-memory game state and interactive UI for live gameplay</li>
-                  <li>Project aimed at strengthening understanding of frontend-backend communication</li>
-                </ul>
-              </Expandable>
-              <Expandable title="Chinese Chess (Xiangqi) Backend">
-                <ul className="text-sm" style={{ paddingLeft: '1.5em', margin: 0, textAlign: 'left', listStylePosition: 'outside' }}>
-                    <li>Developed a complete game engine in Java, supporting all piece movements, game-over rules, and board representation</li>
-                    <li>Focused on applying object-oriented design principles to model complex rule sets</li>
-                    <li>Created to deepen understanding of backend game logic and traditional board games</li>
-                    <li><a className="github-link" target="_blank" href="https://github.com/YiJiaC138/xiangqi">Github Repository here</a></li>
-                </ul>
+              <Expandable title="Chess Engine & Game Logic Projects (Frontend & Backend)">
+                <div>
+                  <h4 style={{ marginBottom: "0.5em", marginTop: 0, color: "#2b4162" }}>Frontend (TypeScript, React)</h4>
+                  <ul className="text-sm" style={{ paddingLeft: '1.5em', margin: 0, textAlign: 'left', listStylePosition: 'outside' }}>
+                    <li>Chess Web App: Built a full-stack chess application with real-time move validation, game-over detection, and Stockfish AI integration</li>
+                    <li>Developed an interactive interface in TypeScript for live gameplay and in-memory game state management</li>
+                    <li>Focused on responsive UI for seamless player experience and utilized WebSocket for frontend-backend communication</li>
+                  </ul>
+
+                  <h4 style={{ marginBottom: "0.5em", marginTop: "1.5em", color: "#2b4162" }}>Backend (Python, Java, JavaScript)</h4>
+                  <ul className="text-sm" style={{ paddingLeft: '1.5em', margin: 0, textAlign: 'left', listStylePosition: 'outside' }}>
+                    <li>Python: Used python-chess to manage move validation, game logic, and Stockfish engine integration for the chess web app backend</li>
+                    <li>Employed WebSocket for seamless real-time data flow between backend and frontend</li>
+                    <li>Chinese Chess (Xiangqi) Engine: Self-made full backend engine in Java, supporting all game rules, piece movements, and board representation</li>
+                    <li>Focused on object-oriented design principles to model complex rules for Xiangqi and explored traditional board game logic</li>
+                    <li>
+                      <a
+                        className="github-link"
+                        target="_blank"
+                        href="https://github.com/YiJiaC138/xiangqi"
+                      >
+                        Xiangqi Java Engine Github Repository here
+                      </a>
+                    </li>
+                  </ul>
+                </div>
               </Expandable>
               <Expandable title="Smart Trip Planner">
                 <ul className="text-sm" style={{ paddingLeft: '1.5em', margin: 0, textAlign: 'left', listStylePosition: 'outside' }}>
