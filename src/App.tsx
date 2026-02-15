@@ -1,175 +1,97 @@
 import './App.css'
-import React, { useEffect, useState } from "react";
-import { motion, useAnimation, AnimatePresence } from "framer-motion";
-import { useInView } from "react-intersection-observer";
+import { BrowserRouter, Routes, Route, Link, useLocation } from "react-router-dom";
+import { Section } from "./components/Section";
+import { Expandable } from "./components/Expandable";
+import { ProjectCard } from "./components/ProjectCard";
+import { projects } from "./data/projects";
 import jsLogo from './assets/js.svg';
 import pythonLogo from './assets/python.svg';
-import reactLogo from './assets/reactjs.svg';
+import profileImage from './assets/images/2842680.jpg';
+import Projects from './pages/Projects';
 
-const Section = ({ children }: { children: React.ReactNode }) => {
-  const controls = useAnimation();
-  const [ref, inView] = useInView({ triggerOnce: true, threshold: 0.2 });
+function NavLink({ to, hash, children }: { to: string; hash: string; children: React.ReactNode }) {
+  const location = useLocation();
+  const isHome = location.pathname === "/";
 
-  useEffect(() => {
-    if (inView) controls.start("visible");
-  }, [controls, inView]);
-
-  return (
-    <motion.section
-      ref={ref}
-      initial="hidden"
-      animate={controls}
-      variants={{
-        hidden: { opacity: 0, y: 40 },
-        visible: { opacity: 1, y: 0, transition: { duration: 0.6 } },
-      }}
-    >
-      {children}
-    </motion.section>
-  );
-};
-
-const Expandable = ({ title, children }: { title: string, children: React.ReactNode }) => {
-  const [isOpen, setIsOpen] = useState(false);
-
-  return (
-    <div className="expandable">
-      <motion.div
-        className="expandable-header"
-        onClick={() => setIsOpen(!isOpen)}
-        whileHover={{ cursor: 'pointer' }}
-      >
-        <h3 className="font-semibold">{title}</h3>
-        <motion.span
-          animate={{ rotate: isOpen ? 45 : 0 }}
-          transition={{ duration: 0.3 }}
-          style={{ fontSize: '1.5rem', fontWeight: 300 }}
-        >
-          +
-        </motion.span>
-      </motion.div>
-      <AnimatePresence>
-        {isOpen && (
-          <motion.div
-            className="expandable-content"
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: 'auto' }}
-            exit={{ opacity: 0, height: 0 }}
-            transition={{ duration: 0.4, ease: "easeInOut" }}
-          >
-            {children}
-          </motion.div>
-        )}
-      </AnimatePresence>
-    </div>
-  );
-};
+  if (isHome) {
+    return <a className="header-link" href={hash}>{children}</a>;
+  }
+  return <Link className="header-link" to={to}>{children}</Link>;
+}
 
 export default function App() {
   return (
-    <>
-      {/* Header Navigation */}
+    <BrowserRouter basename="/portfolio">
       <header className="app-header">
         <nav className="main-nav">
-          <a className="header-link" href="#profile">My Profile</a>
-          <a className="header-link" href="#projects">Personal Projects</a>
-          <a className="header-link" href="#skills">Technical Skills</a>
-          <a className="header-link" href="#education">Education</a>
-          <a className="header-link" href="#clubs">Clubs & Involvement</a>
-          <a className="header-link" href="#languages">Languages</a>
+          <NavLink to="/#profile" hash="#profile">My Profile</NavLink>
+          <NavLink to="/#projects" hash="#projects">Projects</NavLink>
+          <NavLink to="/#skills" hash="#skills">Technical Skills</NavLink>
+          <NavLink to="/#education" hash="#education">Education</NavLink>
+          <NavLink to="/#clubs" hash="#clubs">Clubs & Involvement</NavLink>
         </nav>
       </header>
-      <main style={{ maxWidth: '900px', margin: '0 auto', padding: '5rem 0 2rem 0' }}>
+      <Routes>
+        <Route path="/projects" element={<Projects />} />
+        <Route path="/" element={<HomeContent />} />
+      </Routes>
+    </BrowserRouter>
+  );
+}
+
+function HomeContent() {
+  return (
+      <main style={{ margin: '0 auto', padding: 0 }}>
         {/* My Profile Section */}
-        <div id="profile">
+        <div id="profile" className="section-block section-bg-b">
           <Section>
             <div className="hero-section">
-              <div>
+              <div className="hero-card">
                 <h1 className="text-4xl font-bold">Chiew Yi Jia</h1>
                 <p className="text-lg">Computer Science Student | Aspiring Software Engineer</p>
                 <p className="text-sm">Tel: +601110977387 | Email: chyj218@gmail.com</p>
                 <p className="text-sm mt-4">Passionate computer science student that has a strong interest in building interactive applications using various tools and libraries. Eager to learn new technical and interpersonal skills and actively seeking internship opportunities to grow further.</p>
               </div>
+              <div className="profile-image-wrap">
+                <img src={profileImage} alt="Developer at work" className="profile-image" />
+                <a href="http://www.freepik.com" className="profile-image-credit" target="_blank" rel="noopener noreferrer">Designed by Freepik</a>
+              </div>
             </div>
           </Section>
         </div>
         {/*Experience Section*/}
-        <div id="experience">
+        <div id="experience" className="section-block section-bg-a">
           <Section>
-            <div className="skills-section">
-              <h2 className="section-title">Experience</h2>
-              <Expandable title="IT developer intern at SK Intellix">
-                <ul className="text-sm" style={{ paddingLeft: '1.5em', margin: 0, textAlign: 'left', listStylePosition: 'outside' }}>
-                  <li>Assisted in extending and maintaining frontend of the company's storefront website</li>
-                  <li>Debugged and resolved various frontend issues and bugs</li>
-                  <li>Documented the development process to improve code readability and maintainability</li>
-                  <li>Collaborated with the team and suggested improvements to the frontend codebase</li>
-                  <li>Exposed to tools that handles API integration and web application development</li>
-                  <li>Assisted with evaluation and testing of SK intellix's AI-powered product; NamuhX</li>
-
-                </ul>
-              </Expandable>
-            </div>
+            <h2 className="section-title">Experience</h2>
+            <Expandable title="IT developer intern at SK Intellix">
+              <ul className="text-sm" style={{ paddingLeft: '1.5em', margin: 0, textAlign: 'left', listStylePosition: 'outside' }}>
+                <li>Assisted in extending and maintaining frontend of the company's storefront website</li>
+                <li>Debugged and resolved various frontend issues and bugs</li>
+                <li>Documented the development process to improve code readability and maintainability</li>
+                <li>Collaborated with the team and suggested improvements to the frontend codebase</li>
+                <li>Exposed to tools that handles API integration and web application development</li>
+                <li>Assisted with evaluation and testing of SK intellix's AI-powered product; NamuhX</li>
+              </ul>
+            </Expandable>
           </Section>
         </div>
         {/* Personal Projects Section */}
-        <div id="projects">
+        <div id="projects" className="section-block section-bg-b">
           <Section>
-            <div className="skills-section">
-              <h2 className="section-title">Projects</h2>
-              <Expandable title="Smart Bulletin Board (React + Firebase + MediaPipe) — Final Year Project">
-                <ul className="text-sm" style={{ paddingLeft: '1.5em', margin: 0, textAlign: 'left', listStylePosition: 'outside' }}>
-                  <li>Final year capstone project to build a centralized, interactive digital noticeboard system for campus announcements</li>
-                  <li>Integrated Google MediaPipe to enable custom hand gesture recognition, allowing touchless interaction with the bulletin board</li>
-                  <li>Developed the frontend using React, focusing on a responsive and user-friendly interface for content creation and display</li>
-                  <li>Utilized Firebase for real-time database synchronization, cloud storage, and user role management</li>
-                  <li>Designed to enhance accessibility and streamline content dissemination in public spaces</li>
-                  <li>Achieved top 10 best project award in Monash University Malaysia</li>
-                </ul>
-              </Expandable>
-              <Expandable title="Chess Engine & Game Logic Projects (Frontend & Backend)">
-                <div>
-                  <h4 style={{ marginBottom: "0.5em", marginTop: 0, color: "#2b4162" }}>Frontend (TypeScript, React)</h4>
-                  <ul className="text-sm" style={{ paddingLeft: '1.5em', margin: 0, textAlign: 'left', listStylePosition: 'outside' }}>
-                    <li>Chess Web App: Built a full-stack chess application with real-time move validation, game-over detection, and Stockfish AI integration</li>
-                    <li>Developed an interactive interface in TypeScript for live gameplay and in-memory game state management</li>
-                    <li>Focused on responsive UI for seamless player experience and utilized WebSocket for frontend-backend communication</li>
-                  </ul>
-
-                  <h4 style={{ marginBottom: "0.5em", marginTop: "1.5em", color: "#2b4162" }}>Backend (Python, Java, JavaScript)</h4>
-                  <ul className="text-sm" style={{ paddingLeft: '1.5em', margin: 0, textAlign: 'left', listStylePosition: 'outside' }}>
-                    <li>Python: Used python-chess to manage move validation, game logic, and Stockfish engine integration for the chess web app backend</li>
-                    <li>Employed WebSocket for seamless real-time data flow between backend and frontend</li>
-                    <li>Chinese Chess (Xiangqi) Engine: Self-made full backend engine in Java, supporting all game rules, piece movements, and board representation</li>
-                    <li>Focused on object-oriented design principles to model complex rules for Xiangqi and explored traditional board game logic</li>
-                    <li>
-                      <a
-                        className="github-link"
-                        target="_blank"
-                        href="https://github.com/YiJiaC138/xiangqi"
-                      >
-                        Xiangqi Java Engine Github Repository here
-                      </a>
-                    </li>
-                  </ul>
-                </div>
-              </Expandable>
-              <Expandable title="Smart Trip Planner">
-                <ul className="text-sm" style={{ paddingLeft: '1.5em', margin: 0, textAlign: 'left', listStylePosition: 'outside' }}>
-                  <li>Participated in Kaggle x Google Capstone Project</li>
-                  <li>Developed a smart trip planner using React and Node.js to help users plan their trips</li>
-                  <li>Implemented specialized AI agents using Google's SDK for tasks like visa rule checks, packing lists, and real-time travel info, improving trip planning accuracy and efficiency.</li>
-                  <li><a className="github-link" target="_blank" href="https://github.com/YiJiaC138/smart-trip-planner">Github Repository here</a></li>
-                </ul>
-
-              </Expandable>
-              
+            <h2 className="section-title">Projects</h2>
+            <p className="text-sm" style={{ marginBottom: '1rem' }}>
+              <Link to="/projects" className="github-link">View full projects page →</Link>
+            </p>
+            <div className="projects-grid">
+              {projects.map((project) => (
+                <ProjectCard key={project.title} {...project} />
+              ))}
             </div>
           </Section>
         </div>
 
         {/* Technical Skills Section */}
-        <div id="skills">
+        <div id="skills" className="section-block section-bg-a">
           <Section>
             <div className="skills-section">
               <h2 className="section-title">Technical Skills</h2>
@@ -244,7 +166,7 @@ export default function App() {
         </div>
 
         {/* Education Section */}
-        <div id="education">
+        <div id="education" className="section-block section-bg-b">
           <Section>
             <div className="skills-section">
               <h2 className="section-title">Education</h2>
@@ -265,7 +187,7 @@ export default function App() {
         </div>
 
         {/* Clubs and Involvement Section */}
-        <div id="clubs">
+        <div id="clubs" className="section-block section-bg-a">
           <Section>
             <div className="skills-section">
               <h2 className="section-title">Clubs & Involvement</h2>
@@ -284,8 +206,8 @@ export default function App() {
             </div>
           </Section>
         </div>
-
-        {/* Languages Section */}
+        
+        {/*
         <div id="languages">
           <Section>
             <div className="skills-section">
@@ -298,8 +220,8 @@ export default function App() {
             </div>
           </Section>
         </div>
+        */}
       </main>
-    </>
   );
 }
 
