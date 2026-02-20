@@ -1,4 +1,5 @@
 import './App.css'
+import { useEffect } from "react";
 import { BrowserRouter, Routes, Route, Link, useLocation } from "react-router-dom";
 import { Section } from "./components/Section";
 import { Expandable } from "./components/Expandable";
@@ -13,8 +14,19 @@ function NavLink({ to, hash, children }: { to: string; hash: string; children: R
   const location = useLocation();
   const isHome = location.pathname === "/";
 
+  const scrollToSection = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    if (!isHome) return;
+    e.preventDefault();
+    const el = document.querySelector(hash);
+    el?.scrollIntoView({ behavior: "smooth", block: "start" });
+  };
+
   if (isHome) {
-    return <a className="header-link" href={hash}>{children}</a>;
+    return (
+      <a className="header-link" href={hash} onClick={scrollToSection}>
+        {children}
+      </a>
+    );
   }
   return <Link className="header-link" to={to}>{children}</Link>;
 }
@@ -40,6 +52,21 @@ export default function App() {
 }
 
 function HomeContent() {
+  const location = useLocation();
+
+  // Smooth scroll to section when landing on home with a hash (e.g. from another page)
+  useEffect(() => {
+    const hash = location.hash;
+    if (!hash) return;
+    const el = document.querySelector(hash);
+    if (el) {
+      const t = requestAnimationFrame(() => {
+        el.scrollIntoView({ behavior: "smooth", block: "start" });
+      });
+      return () => cancelAnimationFrame(t);
+    }
+  }, [location.pathname, location.hash]);
+
   return (
       <main style={{ margin: '0 auto', padding: 0 }}>
         {/* My Profile Section */}

@@ -13,10 +13,15 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 .header-link {
   font-weight: 500;
   color: #ffffff;
   text-decoration: inherit;
+  transition: color 0.2s ease;
 }
 .header-link:hover {
   color: #2563eb;
