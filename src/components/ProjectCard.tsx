@@ -1,8 +1,13 @@
 import type { Project } from "../data/projects";
+import placeholderImg from "../assets/images/placeholder.jpg";
 
-export function ProjectCard({ title, description, githubUrl }: Project) {
+type ProjectCardProps = Project & { showImage?: boolean };
+
+export function ProjectCard({ title, description, image, githubUrl, showImage = false }: ProjectCardProps) {
+  const imgSrc = image ?? placeholderImg;
   const content = (
     <>
+      {showImage && <img src={imgSrc} alt="" className="project-card-image" />}
       <h3 className="project-card-title">{title}</h3>
       <p className="project-card-description">{description}</p>
     </>

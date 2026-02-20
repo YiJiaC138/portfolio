@@ -111,7 +111,7 @@ function HomeContent() {
             </p>
             <div className="projects-grid">
               {projects.map((project) => (
-                <ProjectCard key={project.title} {...project} />
+                <ProjectCard key={project.title} {...project} showImage={false} />
               ))}
             </div>
           </Section>
