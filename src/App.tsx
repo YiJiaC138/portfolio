@@ -218,16 +218,16 @@ function HomeContent() {
           <Section>
             <div className="skills-section">
               <h2 className="section-title">Clubs & Involvement</h2>
-              <div className="skills-grid">
-                <div>
-                  <h3 className="font-semibold">Monash Speakers Society - Secretary</h3>
-                  <div className="text-sm">January 2025 - December 2025</div>
-                  <div className="text-sm">Coordinated society operations, including meeting agendas, membership records, and official documentation.</div>
+              <div className="clubs-grid">
+                <div className="clubs-card">
+                  <h3 className="clubs-card-title">Monash Speakers Society - Secretary</h3>
+                  <div className="clubs-card-date">January 2025 - December 2025</div>
+                  <p className="clubs-card-description">Coordinated society operations, including meeting agendas, membership records, and official documentation.</p>
                 </div>
-                <div>
-                  <h3 className="font-semibold">Inti International Sales Support Team</h3>
-                  <div className="text-sm">Jan 2018 - May 2020</div>
-                  <div className="text-sm">Assisted prospective students and parents with course inquiries and application procedures. Provided administrative support during recruitment events and open days. Gained experience in client interaction and teamwork.</div>
+                <div className="clubs-card">
+                  <h3 className="clubs-card-title">Inti International Sales Support Team</h3>
+                  <div className="clubs-card-date">Jan 2018 - May 2020</div>
+                  <p className="clubs-card-description">Assisted prospective students and parents with course inquiries and application procedures. Provided administrative support during recruitment events and open days. Gained experience in client interaction and teamwork.</p>
                 </div>
               </div>
             </div>
