@@ -76,7 +76,7 @@ function HomeContent() {
               <div className="hero-card">
                 <h1 className="text-4xl font-bold">Chiew Yi Jia</h1>
                 <p className="text-lg">Computer Science Student | Aspiring Software Engineer</p>
-                <p className="text-sm">Tel: +601110977387 | Email: chyj218@gmail.com</p>
+                <p className="text-sm">Tel: <a href="tel:+601110977387">(+60)1110977387</a> | Email: <a href="mailto:chyj218@gmail.com">chyj218@gmail.com</a></p>
                 <p className="text-sm mt-4">Passionate computer science student that has a strong interest in building interactive applications using various tools and libraries. Eager to learn new technical and interpersonal skills and actively seeking internship opportunities to grow further.</p>
               </div>
               <div className="profile-image-wrap">
@@ -90,7 +90,7 @@ function HomeContent() {
         <div id="experience" className="section-block section-bg-a">
           <Section>
             <h2 className="section-title">Experience</h2>
-            <Expandable title="IT developer intern at SK Intellix">
+            <Expandable title="IT developer intern at SK Intellix" expandOnPhaseIn>
               <ul className="text-sm" style={{ paddingLeft: '1.5em', margin: 0, textAlign: 'left', listStylePosition: 'outside' }}>
                 <li>Assisted in extending and maintaining frontend of the company's storefront website</li>
                 <li>Debugged and resolved various frontend issues and bugs</li>

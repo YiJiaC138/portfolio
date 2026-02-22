@@ -1,20 +1,30 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 
 export const Expandable = ({
   title,
   children,
   variant = "default",
+  defaultOpen = false,
+  expandOnPhaseIn = false,
 }: {
   title: string;
   children: React.ReactNode;
   variant?: "default" | "card";
+  defaultOpen?: boolean;
+  expandOnPhaseIn?: boolean;
 }) => {
-  const [isOpen, setIsOpen] = useState(false);
+  const [ref, inView] = useInView({ triggerOnce: true, threshold: 0.2 });
+  const [isOpen, setIsOpen] = useState(defaultOpen);
   const isCard = variant === "card";
 
+  useEffect(() => {
+    if (expandOnPhaseIn && inView) setIsOpen(true);
+  }, [expandOnPhaseIn, inView]);
+
   return (
-    <div className={`expandable ${isCard ? "expandable--card" : ""}`}>
+    <div ref={ref} className={`expandable ${isCard ? "expandable--card" : ""}`}>
       <motion.div
         className="expandable-header"
         onClick={() => setIsOpen(!isOpen)}
