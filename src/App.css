@@ -190,7 +190,7 @@ body {
 
 .project-card {
   background: #f1ffeb;
-  border: 1px solid rgba(0, 0, 0, 0.2);
+  border: 3.5px solid rgba(0, 0, 0, 0.2);
   border-radius: 0.75rem;
   padding: 1.5rem 1rem;
   text-align: center;
@@ -203,6 +203,7 @@ body {
   min-height: 8rem;
   transition: box-shadow 0.2s ease, border-color 0.2s ease;
   overflow: hidden;
+  
 }
 
 .project-card:has(.project-card-image) {
@@ -229,7 +230,7 @@ body {
 
 .project-card-title {
   font-size: 1rem;
-  font-weight: 700;
+  font-weight: 800;
   margin: 0 0 0.5rem 0;
   color: #1e293b;
   line-height: 1.3;
@@ -332,7 +333,7 @@ body {
 
 .section-title {
   font-size: 2rem;
-  font-weight: 700;
+  font-weight: 900;
   margin-bottom: 1.5rem;
   text-align: center;
   color: #1e293b;
