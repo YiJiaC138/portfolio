@@ -13,7 +13,7 @@ export const projects: Project[] = [
   },
   {
     title: "Chess Engine & Game Logic (Frontend & Backend)",
-    description: "Full-stack chess web app with Stockfish AI; Xiangqi (Chinese chess) engine in Java with full game logic.",
+    description: "Full-stack chess web app with Stockfish AI; Xiangqi (Chinese chess) engine in Java with full game logic using websocket.",
     githubUrl: "https://github.com/YiJiaC138/xiangqi",
   },
   {
