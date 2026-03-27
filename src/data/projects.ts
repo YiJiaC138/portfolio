@@ -12,9 +12,9 @@ export const projects: Project[] = [
     githubUrl: undefined,
   },
   {
-    title: "Chess Engine & Game Logic (Frontend & Backend)",
-    description: "Full-stack chess web app with Stockfish AI; Xiangqi (Chinese chess) engine in Java with full game logic using websocket.",
-    githubUrl: "https://github.com/YiJiaC138/xiangqi",
+    title: "Xiangi Engine & Game Logic (Frontend & Backend)",
+    description: "Full-stack chess web app; Xiangqi (Chinese chess) engine in Java with full game logic using websocket.",
+    githubUrl: "https://xiangqi-front.onrender.com",
   },
   {
     title: "Smart Trip Planner",
