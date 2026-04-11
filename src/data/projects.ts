@@ -12,7 +12,7 @@ export const projects: Project[] = [
     githubUrl: undefined,
   },
   {
-    title: "Xiangi Engine & Game Logic (Frontend & Backend)",
+    title: "Xiangi Engine & Game Logic (Fullstack)",
     description: "Full-stack chess web app; Xiangqi (Chinese chess) engine in Java with full game logic using websocket.",
     githubUrl: "https://xiangqi-front.onrender.com",
   },
