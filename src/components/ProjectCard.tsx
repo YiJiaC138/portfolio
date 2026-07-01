@@ -8,7 +8,7 @@ export function ProjectCard({ title, description, image, githubUrl, showImage = 
   const content = (
     <>
       {showImage && <img src={imgSrc} alt="" className="project-card-image" />}
-      <h3 className="project-card-title">{title}</h3>
+      <h1 className="project-card-title">{title}</h1>
       <p className="project-card-description">{description}</p>
     </>
   );

@@ -1,5 +1,6 @@
 import './App.css'
 import { useEffect } from "react";
+import { TypeAnimation } from 'react-type-animation';
 import { BrowserRouter, Routes, Route, Link, useLocation } from "react-router-dom";
 import { Section } from "./components/Section";
 import { Expandable } from "./components/Expandable";
@@ -34,15 +35,27 @@ function NavLink({ to, hash, children }: { to: string; hash: string; children: R
 export default function App() {
   return (
     <BrowserRouter basename="/portfolio">
-      <header className="app-header">
+      <header className="app-header flex">
+        
         <nav className="main-nav">
           <NavLink to="/#profile" hash="#profile">My Profile</NavLink>
+          <NavLink to="/#experiences" hash="#experience">Experience</NavLink>
           <NavLink to="/#projects" hash="#projects">Projects</NavLink>
           <NavLink to="/#skills" hash="#skills">Technical Skills</NavLink>
           <NavLink to="/#education" hash="#education">Education</NavLink>
           <NavLink to="/#clubs" hash="#clubs">Clubs & Involvement</NavLink>
+          <a 
+            href="https://drive.google.com/file/d/11i-MwpiN_b5x9DJD4xqykm-plHmak1JA/view?usp=sharing"
+            className='header-link'
+            target="_blank"
+            >
+            Resume PDF
+          </a>
+          
         </nav>
-      </header>
+    
+      
+        </header>
       <Routes>
         <Route path="/projects" element={<Projects />} />
         <Route path="/" element={<HomeContent />} />
@@ -74,10 +87,31 @@ function HomeContent() {
           <Section>
             <div className="hero-section">
               <div className="hero-card">
-                <h1 className="text-4xl font-bold">Chiew Yi Jia</h1>
-                <p className="text-lg">Computer Science Student | Software Engineer</p>
+                <h1 className="text-4xl font-bold">Hi, I'm Yi Jia Chiew</h1>
+                <TypeAnimation 
+                sequence={
+                  [
+                    'Software Developer',
+                    2000,
+                    'Full Stack Developer',
+                    2000,
+                    'Agentic AI Developer',
+                    2000,
+                    'Backend Developer',
+                    2000
+                  ]
+                }
+                style = {{fontSize:'2em', display:'inline-block'}}
+                wrapper = "span"
+                speed = {50}
+                repeat={Infinity}
+                >
+                </TypeAnimation>
                 <p className="text-sm">Tel: <a href="tel:+601110977387">(+60)1110977387</a> | Email: <a href="mailto:chyj218@gmail.com">chyj218@gmail.com</a></p>
-                <p className="text-sm mt-4">Passionate computer science student that has a strong interest in building interactive applications using various tools and libraries. Eager to learn new technical and interpersonal skills.</p>
+                <p className="text-sm mt-4">
+                  I build applications using React, FastAPI, and Lavarel. 
+                  I enjoy designing systems and solving real-world problems. 
+                  Eager to learn new technical and interpersonal skills.</p>
               </div>
               <div className="profile-image-wrap">
                 <img src={profileImage} alt="Developer at work" className="profile-image" />
@@ -91,19 +125,21 @@ function HomeContent() {
           
           <Section>
             <h2 className="section-title">Experience</h2>
-            <Expandable title="Class Assistant at Monash University Malaysia" expandOnPhaseIn>
+            <Expandable title="Teaching Assistant at Monash University Malaysia" expandOnPhaseIn>
+              <div style={{ margin: 0, textAlign: 'left'}}>Supported coursework delivery for computer science students and assisted in weekly lab sessions</div>
               <ul className="text-sm" style={{ paddingLeft: '1.5em', margin: 0, textAlign: 'left', listStylePosition: 'outside' }}>
-                <li>Class assistant for FIT1051 - Programming fundamentals in java</li>
-                <li>Assisted the teaching team in mentoring students to understand Object-Oriented Programming (OOP) concepts</li>
+                <li>Guided 100+ studens in java fundamentals and object-oriented programming (OOP) concepts</li>
                 <li>Guided students in troubleshooting code issues and improving program correctness</li>
                 <li>Provided hands-on support during lab sessions to resolve programming errors</li>
               </ul>
             </Expandable>
             <Expandable title="IT developer intern at SK Intellix Sdn Bhd" expandOnPhaseIn>
+              <div style={{ margin: 0, textAlign: 'left'}}>Worked on improving in web applications using Vue.js and Laravel</div>
               <ul className="text-sm" style={{ paddingLeft: '1.5em', margin: 0, textAlign: 'left', listStylePosition: 'outside' }}>
-                <li>Assisted in extending and maintaining frontend of the company's storefront website</li>
-                <li>Debugged and resolved various frontend issues and bugs</li>
+                <li>Developed new <a href="https://skmagic.com.my/water-purifier/one-plus">product pages</a> for upcoming store product lines using vue.js</li>
+                <li>Debugged and resolved UI/UX issues such as layout overlap and responsive CSS design bugs </li>
                 <li>Documented the development process to improve code readability and maintainability</li>
+                <li>Refactored legacy code to improve readibility and maintainability under supervision</li>
                 <li>Collaborated with the team and suggested improvements to the frontend codebase</li>
                 <li>Exposed to tools that handles API integration and web application development</li>
                 <li>Assisted with evaluation and testing of SK intellix's AI-powered product; NamuhX</li>

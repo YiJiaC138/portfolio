@@ -55,7 +55,6 @@
 }
 
 .main-nav {
-  max-width: 900px;
   margin: 0 auto;
   display: flex;
   justify-content: center;
@@ -74,7 +73,6 @@
 }
 
 .expandable-content {
-  padding-left: 1.5rem;
   overflow: hidden;
 }
 
@@ -229,7 +227,7 @@ body {
 }
 
 .project-card-title {
-  font-size: 1rem;
+  font-size: 1.8rem;
   font-weight: 800;
   margin: 0 0 0.5rem 0;
   color: #1e293b;
