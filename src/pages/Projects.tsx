@@ -1,4 +1,4 @@
-import "../App.css";
+`import "../App.css";
 import { Section } from "../components/Section";
 import { ProjectCard } from "../components/ProjectCard";
 import { projects } from "../data/projects";
@@ -19,3 +19,4 @@ export default function Projects() {
     </main>
   );
 }
+`

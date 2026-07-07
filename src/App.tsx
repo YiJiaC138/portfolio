@@ -1,4 +1,34 @@
-import './App.css'
+import Navbar from "./components/layout/Navbar";
+import Footer from "./components/layout/Footer";
+import Hero from "./components/hero/Hero";
+import Experience from "./components/experience/Experience";
+import Projects from "./components/projects/Projects";
+import Skills from "./components/skills/Skills";
+import Education from "./components/education/Education";
+import Involvement from "./components/involvement/Involvement";
+import Contact from "./components/contact/Contact";
+
+function App() {
+  return (
+    <div className="min-h-screen bg-background text-text">
+      <Navbar />
+      <main>
+        <Hero />
+        <Experience />
+        <Projects />
+        <Skills />
+        <Education />
+        <Involvement />
+        <Contact />
+      </main>
+      <Footer />
+    </div>
+  );
+}
+
+export default App;
+
+`import './App.css'
 import { useEffect } from "react";
 import { TypeAnimation } from 'react-type-animation';
 import { BrowserRouter, Routes, Route, Link, useLocation } from "react-router-dom";
@@ -297,3 +327,4 @@ function HomeContent() {
   );
 }
 
+`

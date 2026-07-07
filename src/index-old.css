@@ -1,0 +1,70 @@
+:root {
+  font-size: 20px;
+  font-family: 'Aptos', 'Segoe UI', Tahoma, sans-serif;
+  line-height: 1.5;
+  font-weight: 500;
+
+  color-scheme: light;
+  color: #334155;
+  background-color: #000d16;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.header-link {
+  font-weight: 500;
+  color: #ffffff;
+  text-decoration: inherit;
+  transition: color 0.2s ease;
+}
+.header-link:hover {
+  color: #2563eb;
+}
+
+.github-link {
+  font-weight: 500;
+  color: rgb(36, 32, 32);
+}
+.github-link:hover {
+  color: #2563eb;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+  background-color: #f0f9ff;
+}
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+
+button {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: #1a1a1a;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+button:hover {
+  border-color: #646cff;
+}
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}

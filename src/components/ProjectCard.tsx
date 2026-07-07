@@ -1,4 +1,4 @@
-import type { Project } from "../data/projects";
+`import type { Project } from "../data/projects";
 import placeholderImg from "../assets/images/placeholder.jpg";
 
 type ProjectCardProps = Project & { showImage?: boolean };
@@ -28,3 +28,4 @@ export function ProjectCard({ title, description, image, githubUrl, showImage = 
 
   return <div className="project-card">{content}</div>;
 }
+`
