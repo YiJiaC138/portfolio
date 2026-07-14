@@ -45,12 +45,11 @@ export default function Contact() {
         </div>
 
         <a
-          href="/resume.pdf"
-          download
+          href="https://drive.google.com/file/d/11fL843VVq1LEutxB4I8kNQ8Uzs9tHeLk/view?usp=sharing"
+          target="_blank"
           className="mt-6 inline-flex items-center gap-2 text-small font-medium text-text-secondary transition-colors duration-200 hover:text-text"
         >
-          <Download size={16} />
-          Download Resume
+          Link to Resume
         </a>
       </motion.div>
     </section>

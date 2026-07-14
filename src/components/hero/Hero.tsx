@@ -52,12 +52,13 @@ export default function Hero() {
             <ArrowRight size={16} />
           </a>
           <a
-            href="/resume.pdf"
-            download
+            href="https://drive.google.com/file/d/11fL843VVq1LEutxB4I8kNQ8Uzs9tHeLk/view?usp=sharing"
+            
             className="flex items-center gap-2 rounded-lg border border-border px-5 py-3 text-small font-medium text-text transition-colors duration-200 hover:border-primary hover:text-primary"
+            target="_blank"
           >
-            <Download size={16} />
-            Download Resume
+            
+            View Resume
           </a>
         </div>
 

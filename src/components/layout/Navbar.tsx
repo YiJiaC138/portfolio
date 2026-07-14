@@ -49,11 +49,10 @@ export default function Navbar() {
         </ul>
 
         <a
-          href="/resume.pdf"
-          download
+          href="https://drive.google.com/file/d/11fL843VVq1LEutxB4I8kNQ8Uzs9tHeLk/view?usp=sharing"
+          target="_blank"
           className="hidden items-center gap-2 rounded-lg bg-primary px-4 py-2 text-small font-medium text-text transition-colors duration-200 hover:bg-primary-hover md:flex"
         >
-          <Download size={16} />
           Resume
         </a>
 

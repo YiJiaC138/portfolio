@@ -5,6 +5,7 @@ export interface ProjectItem {
   description: string;
   technologies: string[];
   github: string;
+  demoAvailable?:Boolean;
   demolabel: string;
   demo: string;
   image: string;
@@ -19,6 +20,7 @@ export const projects: ProjectItem[] = [
     ProjectType:"Final Year Project",
     technologies: ["React", "FastAPI", "PostgreSQL"],
     github: "https://github.com/yourusername/smart-bulletin-board",
+    demoAvailable:false,
     demolabel:"Live demo",
     demo: "https://your-demo-link.com",
     image: "/assets/images/project-placeholder.svg",
@@ -34,7 +36,8 @@ export const projects: ProjectItem[] = [
     description: "AI-powered IT Service Management (ITSM) platform to automate incident handling workflows.",
     ProjectType: "UM Hackathon 2026",
     technologies: ["React", "Python", "Z.AI"],
-    github: "https://github.com/yourusername/project-two",
+    github: "https://github.com/YiJiaC138/AI-Incident-Tracker",
+    demoAvailable: false,
     demolabel: "Live Demo",
     demo: "https://your-demo-link.com",
     image: "/assets/images/project-placeholder.svg",
@@ -50,8 +53,9 @@ export const projects: ProjectItem[] = [
     ProjectType: " Kaggle x Google Capstone Project 2025",
     technologies: ["Python,", "Google ADK"],
     github: "https://github.com/YiJiaC138/smart-trip-planner",
+    demoAvailable:true,
     demolabel: "Kaggle Link",
-    demo: "https://your-demo-link.com",
+    demo: "https://www.kaggle.com/competitions/agents-intensive-capstone-project/writeups/travelsmart",
     image: "/assets/images/project-placeholder.svg",
     features: [
       "Multi-agent hiearchical architecture with specialized agents.", 
@@ -63,9 +67,10 @@ export const projects: ProjectItem[] = [
     description: "AI-assisted note-taking application inspired by Notion.",
     ProjectType: "UniHack 2024",
     technologies: ["Python", "Gemini"],
-    github: "https://github.com/yourusername/project-four",
+    github: "https://github.com/joeljosephreji/mind-mosaic-backend",
     demolabel: "Devpost",
-    demo: "https://your-demo-link.com",
+    demoAvailable: true,
+    demo: "https://devpost.com/software/mindmosaic-l0vqpa",
     image: "/assets/images/project-placeholder.svg",
     features: [
       "Transform and organize notes into structured, retention-focused content.", ],
@@ -77,6 +82,7 @@ export const projects: ProjectItem[] = [
     ProjectType: "Personal",
     technologies: ["Python", "FastAPI", "Docker", "Java", "TypeScript"],
     github: "https://github.com/yourusername/project-four",
+    demoAvailable: true,
     demolabel: "Live Demo",
     demo: "https://xiangqi-front.onrender.com/",
     image: "/assets/images/project-placeholder.svg",
