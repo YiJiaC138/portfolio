@@ -1,5 +1,7 @@
 import { motion } from "framer-motion";
 import { Github, ExternalLink } from "lucide-react";
+import { useState } from "react";
+import Modal from "../shared/Modal";
 import type { ProjectItem } from "../../data/projects";
 interface ProjectCardProps {
   project: ProjectItem;
@@ -7,6 +9,16 @@ interface ProjectCardProps {
 }
 
 export default function ProjectCard({ project, index }: ProjectCardProps) {
+
+  const [demoModalOpen, setDemoModalOpen] = useState(false);
+  const demoAvailable = project.demoAvailable ?? false;
+
+  const handleDemoClick = (e: React.MouseEvent) => {
+    if (!demoAvailable) {
+      e.preventDefault();
+      setDemoModalOpen(true);
+    }
+  };
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
@@ -71,9 +83,11 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
             GitHub
           </a>
           <a
-            href={project.demo}
-            target="_blank"
+            href={demoAvailable ? project.demo : "#"}
+            target={demoAvailable ? "_blank" : undefined}
             rel="noreferrer"
+            onClick={handleDemoClick}
+            aria-haspopup={!demoAvailable}
             className="flex items-center gap-2 text-small font-medium text-primary transition-colors duration-200 hover:text-primary-hover"
           >
             <ExternalLink size={16} />
@@ -81,6 +95,25 @@ export default function ProjectCard({ project, index }: ProjectCardProps) {
           </a>
         </div>
       </div>
+      <Modal
+        open={demoModalOpen}
+        onClose={() => setDemoModalOpen(false)}
+        title="Demo unavailable"
+      >
+        <p>
+          The live demo for <span className="text-text">{project.title}</span>{" "}
+          isn't available right now. Check out the code on GitHub instead.
+        </p>
+        <a
+          href={project.github}
+          target="_blank"
+          rel="noreferrer"
+          className="mt-4 inline-flex items-center gap-2 rounded-lg bg-primary px-4 py-2 text-small font-medium text-text transition-colors duration-200 hover:bg-primary-hover"
+        >
+          <Github size={16} />
+          View on GitHub
+        </a>
+      </Modal>
     </motion.div>
   );
 }
