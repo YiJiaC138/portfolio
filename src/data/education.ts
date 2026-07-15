@@ -20,8 +20,26 @@ export const education: EducationItem[] = [
       "Web Application Development",
     ],
     achievements: [
+      "CGPA: 3.92",
+      "WAM: 84",
       "Top 10 Best FYP Awards",
       "Letter of commendation 2024",
     ],
+    
+  },
+  {
+    id: 2,
+    degree: "Cambridge A-levels",
+    institution: "INTI College Penang",
+    graduation: "2019-2020",
+    coursework: [
+      "Mathematics",
+      "Further Matematics",
+      "Chemistry",
+      "Physics"
+    ],
+    achievements: [
+      ],
+    
   },
 ];

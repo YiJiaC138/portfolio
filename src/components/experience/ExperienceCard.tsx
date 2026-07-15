@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import type { ExperienceItem } from "../../data/experience";
+import OrgLogo from "../shared/OrgLogo";
 interface ExperienceCardProps {
   item: ExperienceItem;
   index: number;
@@ -16,9 +17,12 @@ export default function ExperienceCard({ item, index }: ExperienceCardProps) {
       className="group rounded-2xl border border-border bg-surface p-6 shadow-sm transition-shadow duration-300 hover:border-primary/60 hover:shadow-lg hover:shadow-primary/5 md:p-8"
     >
       <div className="flex flex-wrap items-start justify-between gap-2">
-        <div>
-          <h3 className="text-card-title text-text">{item.role}</h3>
-          <p className="mt-1 text-body text-primary">{item.company}</p>
+        <div className="flex items-start gap-4">
+          <OrgLogo src={item.companyLogo} name={item.company} />
+          <div>
+            <h3 className="text-card-title text-text">{item.role}</h3>
+            <p className="mt-1 text-body text-primary">{item.company}</p>
+          </div>
         </div>
         <span className="whitespace-nowrap rounded-full border border-border px-3 py-1 text-small text-text-secondary">
           {item.duration}
