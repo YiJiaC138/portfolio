@@ -20,9 +20,9 @@ export const projects: ProjectItem[] = [
     ProjectType:"Final Year Project",
     technologies: ["React", "FastAPI", "PostgreSQL"],
     github: "https://github.com/yourusername/smart-bulletin-board",
-    demoAvailable:false,
+    demoAvailable:true,
     demolabel:"Live demo",
-    demo: "https://your-demo-link.com",
+    demo: "https://yijiac138.github.io/fyp-smartbulletinboard/",
     image: "/assets/images/project-placeholder.svg",
     features: [
       "Real-time updates via WebSockets",
